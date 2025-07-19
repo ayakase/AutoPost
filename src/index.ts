@@ -1,9 +1,8 @@
 import { Hono } from 'hono'
-
+import './cron-task/scheduler'
+import danbooruRoute from './routes/test/danbooru'
 const app = new Hono()
 
-app.get('/', (c) => {
-  return c.text('Hello Hono!')
-})
+app.route('/test', danbooruRoute)
 
 export default app
