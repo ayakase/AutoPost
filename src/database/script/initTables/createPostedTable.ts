@@ -2,12 +2,13 @@
 import { Database } from "bun:sqlite";
 
 const db = new Database("src/database/data/database.db");
-
 db.run(`
-  CREATE TABLE IF NOT EXISTS users (
+  CREATE TABLE IF NOT EXISTS posted_images (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT NOT NULL,
-    email TEXT UNIQUE NOT NULL
+    danbooru_id INTEGER NOT NULL UNIQUE,
+    image_url TEXT,
+    posted_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    facebook_post_id TEXT
   );
 `);
 
