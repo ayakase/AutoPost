@@ -1,4 +1,4 @@
-export const getOnePost = async () => {
+export const getRandomPost = async () => {
   const baseTag: string | undefined = Bun.env.MAIN_TAG;
   const ratingFilter = "rating:s";
   if (!baseTag) {

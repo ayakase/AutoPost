@@ -1,5 +1,5 @@
 import { Hono } from 'hono'
-import './cron-task/scheduler'
+// import './cron-task/scheduler'
 import danbooruRoute from './routes/test/danbooru'
 import lineRoute from './routes/trigger/line'
 const app = new Hono()
