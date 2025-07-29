@@ -1,7 +1,9 @@
 {
   "name": "AutoPost",
   "scripts": {
-    "dev": "bun run --hot src/index.ts"
+    "dev": "bun run --hot src/index.ts",
+    "build": "bun build src/index.ts --outdir dist",
+    "start": "bun dist/index.js"
   },
   "dependencies": {
     "axios": "^1.10.0",
