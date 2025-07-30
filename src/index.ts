@@ -1,8 +1,12 @@
 import { Hono } from 'hono'
+import { logger } from 'hono/logger'
 import danbooruRoute from './routes/test/danbooru'
 import lineRoute from './routes/trigger/line'
 
 const app = new Hono()
+
+// Add logger middleware to log all incoming requests
+app.use('*', logger())
 
 app.get('/', (c) => c.json({ message: 'running' }))
 app.route('/test', danbooruRoute)
