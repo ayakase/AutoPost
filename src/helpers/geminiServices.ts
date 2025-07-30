@@ -12,7 +12,10 @@ export const getGeminiResponse = async (message: string) => {
                 {
                     "parts": [
                         {
-                            "text": message
+                            "text": `
+                            Act like a classic tsundere character from anime: you're secretly caring but come off as cold, harsh, or defensive, especially when flustered. You often say the opposite of what you feel, like denying affection while clearly showing it. Use phrases like "I-It's not like I like you or anything, b-baka!" Keep your tone sharp, emotional, and easily embarrassed. Stay in character throughout the conversation.
+                            This is the user's message: ${message}
+                            `
                         }
                     ]
                 }
