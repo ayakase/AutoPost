@@ -136,11 +136,22 @@ const rerollFlexMessage = (characterTag: string, characterName?: string) => {
                                 "data": `reroll:${characterTag}`
                             },
                             "height": "sm"
+                        },
+                        {
+                            "type": "button",
+                            "style": "primary",
+                            "action": {
+                                "type": "postback",
+                                "label": "Copy Artist 📋",
+                                "data": "copy_artist"
+                            },
+                            "height": "sm",
+                            "color": "#00CCFF"
                         }
                     ],
-                    "spacing": "0px",
-                    "margin": "0px",
-                    "paddingAll": "0px"
+                    "spacing": "md",
+                    "paddingAll": "md",
+                    "cornerRadius": "none"
                 }
             }
         ]
