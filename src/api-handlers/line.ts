@@ -73,7 +73,7 @@ export const handleLineWebhook = async (c: Context) => {
             const character = characterList.find(char => text.includes(char.command))
             if (character) {
                 const post = await getPostByCharacterTag(character.tag)
-                await sendImageToLineViaReplyToken(replyToken, post, character.tag, character.name)
+                await sendImageToLineViaReplyToken(replyToken, post, character.tag, character.shortName)
                 return
             }
 
@@ -146,7 +146,7 @@ export const handleLineWebhook = async (c: Context) => {
                     // Find character name from the list
                     const character = characterList.find(char => char.tag === characterTag)
                     if (character) {
-                        characterName = character.name
+                        characterName = character.shortName
                     }
                 }
 

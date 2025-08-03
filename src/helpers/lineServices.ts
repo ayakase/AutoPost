@@ -116,7 +116,7 @@ export const startChatLoading = async (chatId: string, loadingSeconds: number) =
 
 const rerollFlexMessage = (characterTag: string, characterName?: string) => {
     const displayName = characterName || (characterTag === 'random' ? 'Random' : characterTag)
-    const buttonLabel = `Reroll ${displayName} 🔁`
+    const buttonLabel = `${displayName} 🔁`
 
     return {
         "type": "carousel",
