@@ -70,7 +70,7 @@ export const sendImageToLineViaReplyToken = async (replyToken: string, post: any
             const flexMessage = {
                 type: "flex",
                 altText: "Reroll button",
-                contents: rerollFlexMessage(characterTag, characterName)
+                contents: rerollFlexMessage(characterTag, characterName, post.tag_string_artist)
             }
             messages.push(flexMessage)
         }
@@ -114,7 +114,7 @@ export const startChatLoading = async (chatId: string, loadingSeconds: number) =
 // }
 
 
-const rerollFlexMessage = (characterTag: string, characterName?: string) => {
+const rerollFlexMessage = (characterTag: string, characterName?: string, artist?: string) => {
     const displayName = characterName || (characterTag === 'random' ? 'Random' : characterTag)
     const buttonLabel = `${displayName} 🔁`
 
@@ -141,9 +141,9 @@ const rerollFlexMessage = (characterTag: string, characterName?: string) => {
                             "type": "button",
                             "style": "primary",
                             "action": {
-                                "type": "postback",
+                                "type": "clipboard",
                                 "label": "Copy Artist 📋",
-                                "data": "copy_artist"
+                                "clipboardText": artist ? `Artist: ${artist}` : "Artist: Unknown"
                             },
                             "height": "sm",
                             "color": "#00CCFF"
