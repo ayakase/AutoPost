@@ -3,7 +3,7 @@ name: Deploy AutoPost
 on:
   push:
     branches:
-      - main # or 'master' if that's your default
+      - master # or 'master' if that's your default
 
 jobs:
   deploy:
