@@ -1,5 +1,5 @@
 import { CronJob } from 'cron'
-import { postToLine } from '../services/line/postToLine'
+// import { postToLine } from '../services/line/postToLine'
 
 const job = new CronJob('* * * * *', async () => {
   console.log(`Running job at ${new Date().toISOString()}`)
