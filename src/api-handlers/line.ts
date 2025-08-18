@@ -49,7 +49,7 @@ const characterList = [
     {
         name: 'Hibari',
         shortName: 'Hibari',
-        tag: 'hibari',
+        tag: 'houkobaru_hibari',
         command: '/hibari'
     }
 ]
