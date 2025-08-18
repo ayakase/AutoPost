@@ -6,7 +6,8 @@ export const getRandomPost = async () => {
         console.error("MAIN_TAG is undefined");
         return null;
     }
-    const combinedTags = `${baseTag} ${ratingFilter}`;
+    const combinedTags = `${baseTag}`;
+    // ${ratingFilter}
     const url = `https://danbooru.donmai.us/posts/random.json?tags=${encodeURIComponent(combinedTags)}`;
     try {
         const response = await axios.get(url);
@@ -19,7 +20,8 @@ export const getRandomPost = async () => {
 };
 export const getPostByCharacterTag = async (tag: string) => {
     const ratingFilter = "rating:s";
-    const combinedTags = `${tag} ${ratingFilter}`;
+    const combinedTags = `${tag}`;
+    // ${ratingFilter}
     const url = `https://danbooru.donmai.us/posts/random.json?tags=${encodeURIComponent(combinedTags)}`;
     try {
         const response = await axios.get(url);
